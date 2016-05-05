@@ -179,8 +179,8 @@ Add the following middleware to :setting:`MIDDLEWARE`::
 
     import pytz
 
-    from django.core.handlers.middleware import MiddlewareMixin
     from django.utils import timezone
+    from django.django.utils.deprecation import MiddlewareMixin
 
     class TimezoneMiddleware(MiddlewareMixin):
         def process_request(self, request):

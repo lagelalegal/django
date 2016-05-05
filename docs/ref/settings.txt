@@ -1824,7 +1824,11 @@ Default::
         'django.middleware.csrf.CsrfViewMiddleware',
     ]
 
-A list of middleware classes to use. See :doc:`/topics/http/middleware`.
+A list of middleware classes to use. This was the default setting used in
+Django 1.9 and earlier. Django 1.10 introduced a new style middleware. If you
+have an older project using this setting you should :ref:`update any middleware
+you've written yourself <upgrading-middleware>` to the new style and then use
+the :setting:`MIDDLEWARE`.
 
 .. setting:: MIGRATION_MODULES
 

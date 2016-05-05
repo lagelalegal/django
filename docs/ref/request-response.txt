@@ -176,9 +176,9 @@ All attributes should be considered read-only, unless stated otherwise.
 
     An instance of :class:`~django.urls.ResolverMatch` representing the
     resolved URL. This attribute is only set after URL resolving took place,
-    which means it's available in all views but not in middleware methods
-    which are executed before URL resolving takes place (like
-    ``process_request()``, you can use ``process_view()`` instead).
+    which means it's available in all views but not in middleware which are
+    executed before URL resolving takes place (you can use ``process_view()``
+    though).
 
 Attributes set by application code
 ----------------------------------
@@ -257,7 +257,7 @@ Methods
         behind multiple proxies. One solution is to use middleware to rewrite
         the proxy headers, as in the following example::
 
-            from django.core.handlers.middleware import MiddlewareMixin
+            from django.django.utils.deprecation import MiddlewareMixin
 
             class MultipleProxyMiddleware(MiddlewareMixin):
                 FORWARDED_FOR_FIELDS = [

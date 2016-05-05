@@ -156,7 +156,8 @@ class CacheMiddleware(UpdateCacheMiddleware, FetchFromCacheMiddleware):
     Also used as the hook point for the cache decorator, which is generated
     using the decorator-from-middleware utility.
     """
-    def __init__(self, cache_timeout=None, **kwargs):
+    def __init__(self, get_response=None, cache_timeout=None, **kwargs):
+        self.get_response = get_response
         # We need to differentiate between "provided, but using default value",
         # and "not provided". If the value is provided using a default, then
         # we fall back to system defaults. If it is not provided at all,
